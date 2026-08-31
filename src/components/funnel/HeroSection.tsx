@@ -97,13 +97,15 @@ export function HeroSection() {
 
           {/* scattered mini thumbnails */}
           <div className="mt-9 flex items-center justify-center">
-            {[-9, 5, -4, 8].map((rot, i) => (
+            {miniThumbs.map((t, i) => (
               <span
-                key={i}
-                style={{ rotate: `${rot}deg`, marginLeft: i === 0 ? 0 : -14, zIndex: i }}
-                className="grid h-14 w-24 place-items-center rounded-xl border border-primary/15 bg-charcoal shadow-[0_16px_28px_-16px_rgba(0,0,0,0.9)] sm:h-16 sm:w-28"
+                key={t.alt}
+                style={{ rotate: `${t.rot}deg`, marginLeft: i === 0 ? 0 : -16, zIndex: i }}
+                className="relative block h-[4.75rem] w-32 overflow-hidden rounded-xl border border-primary/20 bg-charcoal shadow-[0_16px_28px_-16px_rgba(0,0,0,0.9)] transition-transform duration-500 hover:!rotate-0 sm:h-[5.5rem] sm:w-36"
               >
-                <span className="grid h-6 w-6 place-items-center rounded-full bg-primary/15 text-primary">
+                <img src={t.src} alt={t.alt} loading="lazy" className="h-full w-full object-cover" />
+                <span className="absolute inset-0 bg-ink/25" />
+                <span className="absolute bottom-1.5 right-1.5 grid h-6 w-6 place-items-center rounded-full bg-ink/80 text-primary">
                   <svg width="9" height="9" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                     <path d="M4.5 2.8 13 8l-8.5 5.2z" />
                   </svg>
