@@ -1,9 +1,5 @@
 import { GemAccent, Reveal } from "./primitives";
-
-const initials = [
-  "AV", "KB", "NR", "LX", "SM", "QO", "TD", "HZ", "PM", "JC", "RF", "WE",
-  "GK", "VN", "OB", "ZY", "MT", "DL", "CS", "FA", "IU", "YH", "BP", "EJ",
-];
+import { brandLogos } from "./brand-logos";
 
 export function TrustedSection() {
   return (
@@ -21,11 +17,16 @@ export function TrustedSection() {
         </p>
       </div>
 
-      <ul className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-3 sm:gap-4">
-        {initials.map((t, i) => (
-          <Reveal as="li" key={t} delay={i * 25}>
-            <span className="group grid h-14 w-14 place-items-center rounded-full border border-foreground/10 bg-charcoal text-xs font-bold uppercase tracking-wide text-muted-foreground grayscale transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:text-primary hover:grayscale-0 hover:shadow-[0_0_28px_-8px_color-mix(in_oklab,var(--color-primary)_70%,transparent)] sm:h-16 sm:w-16 sm:text-sm">
-              {t}
+      <ul className="mx-auto mt-14 flex max-w-3xl flex-wrap justify-center gap-3 sm:gap-4">
+        {brandLogos.map((b, i) => (
+          <Reveal as="li" key={b.name} delay={i * 35}>
+            <span
+              title={b.name}
+              className="group grid h-14 w-14 place-items-center rounded-full border border-foreground/10 bg-charcoal text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:text-primary hover:shadow-[0_0_28px_-8px_color-mix(in_oklab,var(--color-primary)_70%,transparent)] sm:h-16 sm:w-16"
+            >
+              <svg viewBox="0 0 24 24" role="img" aria-label={b.name} className="h-6 w-6 fill-current sm:h-7 sm:w-7">
+                <path d={b.path} />
+              </svg>
             </span>
           </Reveal>
         ))}
