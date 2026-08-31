@@ -1,24 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroSection } from "@/components/funnel/HeroSection";
+import { GrowthSection } from "@/components/funnel/GrowthSection";
+import { IncludedSection } from "@/components/funnel/IncludedSection";
+import { ServicesSection } from "@/components/funnel/ServicesSection";
+import { TrustedSection } from "@/components/funnel/TrustedSection";
+import { PricingSection } from "@/components/funnel/PricingSection";
+import { ProcessSection } from "@/components/funnel/ProcessSection";
+import { ChatButton } from "@/components/funnel/primitives";
+import mark from "@/assets/copyboard-mark.png.asset.json";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "CopyBoard — Unlimited Content Creation, One Flat Fee" },
+      {
+        name: "description",
+        content:
+          "Unlimited design, video editing, podcast editing and short & long-form content from real human creators. One flat monthly fee, fast turnaround, cancel anytime.",
+      },
+      { property: "og:title", content: "CopyBoard — Unlimited Content Creation, One Flat Fee" },
+      {
+        property: "og:description",
+        content:
+          "Done-for-you unlimited content: design, video, podcast and social. Real humans, flat monthly fee, cancel anytime.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: FunnelPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function FunnelPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-ink">
+      <header className="absolute inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-5 sm:px-10">
+        <span className="flex items-center gap-2.5">
+          <img src={mark.url} alt="CopyBoard" className="h-9 w-9 rounded-full object-contain" />
+          <span className="font-display text-lg font-bold tracking-tight text-foreground">CopyBoard</span>
+        </span>
+        <ChatButton className="hidden px-5 py-2.5 text-xs sm:inline-flex" />
+      </header>
+
+      <HeroSection />
+      <GrowthSection />
+      <IncludedSection />
+      <ServicesSection />
+      <TrustedSection />
+      <PricingSection />
+      <ProcessSection />
+    </main>
   );
 }
