@@ -1,4 +1,10 @@
 import { PlayButton, Reveal, SectionHeader } from "./primitives";
+import workPodcast from "@/assets/gen/work-podcast.jpg";
+import workYoutube from "@/assets/gen/work-youtube.jpg";
+import workAd from "@/assets/gen/work-ad.jpg";
+import workDoc from "@/assets/gen/work-doc.jpg";
+import workInterview from "@/assets/gen/work-interview.jpg";
+import workInstagram from "@/assets/gen/work-instagram.jpg";
 
 const chips = [
   { label: "Design", icon: "pen" },
@@ -33,40 +39,18 @@ type Work = {
   category: string;
   duration: string;
   progress: number;
-  gradient: string;
-  texture: "wave" | "timeline";
+  img: string;
+  offset: string;
 };
 
 const works: Work[] = [
-  { title: "Podcast Highlight Reel", category: "Podcast Editing", duration: "0:47", progress: 62, gradient: "linear-gradient(135deg,#1c1a16 0%,#0D0D0C 62%)", texture: "wave" },
-  { title: "YouTube Long-Form Edit", category: "Long-Form Content", duration: "14:12", progress: 38, gradient: "linear-gradient(215deg,#221f18 0%,#0D0D0C 70%)", texture: "timeline" },
-  { title: "Brand Ad Cutdown", category: "Advertising", duration: "0:22", progress: 78, gradient: "linear-gradient(120deg,#0D0D0C 0%,#26220f 100%)", texture: "timeline" },
-  { title: "Founder Story Documentary", category: "Long-Form Content", duration: "8:05", progress: 45, gradient: "linear-gradient(160deg,#19170f 0%,#0D0D0C 65%)", texture: "timeline" },
-  { title: "Interview Clip Pack", category: "Short-Form Content", duration: "0:58", progress: 55, gradient: "linear-gradient(300deg,#1e1b13 0%,#0D0D0C 68%)", texture: "wave" },
-  { title: "Audiogram Series", category: "Podcast Editing", duration: "1:16", progress: 70, gradient: "linear-gradient(45deg,#0D0D0C 0%,#231f14 100%)", texture: "wave" },
+  { title: "Podcast Highlight Reel", category: "Podcast Editing", duration: "0:47", progress: 62, img: workPodcast, offset: "lg:mt-0" },
+  { title: "YouTube Long-Form Edit", category: "Long-Form Content", duration: "14:12", progress: 38, img: workYoutube, offset: "lg:mt-10" },
+  { title: "Brand Ad Cutdown", category: "Advertising", duration: "0:22", progress: 78, img: workAd, offset: "lg:mt-2" },
+  { title: "Founder Story Documentary", category: "Long-Form Content", duration: "8:05", progress: 45, img: workDoc, offset: "lg:mt-8" },
+  { title: "Interview Clip Pack", category: "Short-Form Content", duration: "0:58", progress: 55, img: workInterview, offset: "lg:mt-0" },
+  { title: "Instagram Series", category: "Short-Form Content", duration: "1:16", progress: 70, img: workInstagram, offset: "lg:mt-10" },
 ];
-
-function Texture({ kind }: { kind: Work["texture"] }) {
-  if (kind === "wave") {
-    return (
-      <svg viewBox="0 0 320 120" className="absolute inset-0 h-full w-full opacity-40" aria-hidden="true" preserveAspectRatio="none">
-        {Array.from({ length: 44 }, (_, i) => {
-          const h = 12 + Math.abs(Math.sin(i * 0.7) * 46) + (i % 5) * 4;
-          return <rect key={i} x={i * 7.3 + 4} y={60 - h / 2} width="3" height={h} rx="1.5" fill="#FFD400" opacity={0.35 + (i % 4) * 0.1} />;
-        })}
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 320 120" className="absolute inset-0 h-full w-full opacity-40" aria-hidden="true" preserveAspectRatio="none">
-      <rect x="12" y="84" width="296" height="10" rx="5" fill="#FFD400" opacity="0.14" />
-      <rect x="12" y="84" width="168" height="10" rx="5" fill="#FFD400" opacity="0.4" />
-      {Array.from({ length: 8 }, (_, i) => (
-        <rect key={i} x={16 + i * 37} y={26} width="30" height="40" rx="5" fill="#FFD400" opacity={0.08 + (i % 3) * 0.05} />
-      ))}
-    </svg>
-  );
-}
 
 export function IncludedSection() {
   return (
