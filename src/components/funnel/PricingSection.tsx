@@ -27,8 +27,8 @@ const checklist = [
 
 const plans = [
   {
-    name: "Standard",
-    tag: "For steady growth",
+    name: "Beginner",
+    tag: "For getting started",
     price: "$2,495",
     features: [
       "One active request at a time",
@@ -40,7 +40,7 @@ const plans = [
     ],
   },
   {
-    name: "Unlimited",
+    name: "Standard",
     tag: "For fast-moving brands",
     price: "$3,995",
     features: [
