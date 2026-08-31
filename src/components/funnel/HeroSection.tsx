@@ -2,6 +2,17 @@ import { useEffect, useState } from "react";
 import { ChatButton, GemAccent, PinClip, PlayButton } from "./primitives";
 import vsl from "@/assets/10008.png.asset.json";
 import mark from "@/assets/copyboard-mark.png.asset.json";
+import thumbYt from "@/assets/gen/thumb-yt.jpg";
+import thumbPodcast from "@/assets/gen/thumb-podcast.jpg";
+import thumbAd from "@/assets/gen/thumb-ad.jpg";
+import thumbShort from "@/assets/gen/thumb-short.jpg";
+
+const miniThumbs = [
+  { src: thumbYt, alt: "YouTube thumbnail design sample", rot: -9 },
+  { src: thumbPodcast, alt: "Podcast cover art sample", rot: 5 },
+  { src: thumbAd, alt: "Social ad graphic sample", rot: -4 },
+  { src: thumbShort, alt: "Short-form vertical clip sample", rot: 8 },
+];
 
 function useStaged(steps: number, gap = 150) {
   const [stage, setStage] = useState(0);

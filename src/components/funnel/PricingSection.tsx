@@ -110,9 +110,11 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <span className="mt-7 inline-block -rotate-3 rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
-              Avail 20% Off Today
-            </span>
+            <div className="mx-auto mt-7 max-w-md text-center">
+              <span className="inline-block rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
+                Avail 20% Off Today
+              </span>
+            </div>
           </div>
         </Reveal>
       </div>
