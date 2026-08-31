@@ -27,8 +27,8 @@ const checklist = [
 
 const plans = [
   {
-    name: "Standard",
-    tag: "For steady growth",
+    name: "Beginner",
+    tag: "For getting started",
     price: "$2,495",
     features: [
       "One active request at a time",
@@ -40,7 +40,7 @@ const plans = [
     ],
   },
   {
-    name: "Unlimited",
+    name: "Standard",
     tag: "For fast-moving brands",
     price: "$3,995",
     features: [
@@ -110,17 +110,19 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <span className="mt-7 inline-block -rotate-3 rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
-              Avail 20% Off Today
-            </span>
+            <div className="mx-auto mt-7 max-w-md text-center">
+              <span className="inline-block rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
+                Avail 20% Off Today
+              </span>
+            </div>
           </div>
         </Reveal>
       </div>
 
       {/* pricing cards */}
-      <div className="mx-auto mt-20 grid max-w-6xl grid-cols-1 items-center gap-6 lg:grid-cols-3">
+      <div className="mx-auto mt-20 grid max-w-4xl grid-cols-1 items-center gap-5 sm:mx-auto sm:max-w-md lg:max-w-5xl lg:grid-cols-3">
         {plans.map((p, i) => {
-          const featured = p.name === "Unlimited";
+          const featured = p.name === "Standard";
           return (
             <Reveal key={p.name} delay={featured ? 260 : i * 120} className={featured ? "order-first lg:order-none" : ""}>
               <div className={`relative ${featured ? "lg:-mt-8" : ""}`}>
@@ -128,30 +130,30 @@ export function PricingSection() {
                   <span className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(60%_60%_at_50%_50%,color-mix(in_oklab,var(--color-primary)_28%,transparent),transparent_75%)]" />
                 )}
                 <div
-                  className={`relative flex h-full flex-col rounded-3xl p-7 transition-transform duration-500 ${
+                  className={`relative flex h-full flex-col rounded-2xl p-5 transition-transform duration-500 ${
                     featured
-                      ? "scale-[1.03] bg-primary text-primary-foreground shadow-[0_40px_90px_-30px_color-mix(in_oklab,var(--color-primary)_70%,transparent)] sm:p-8"
+                      ? "scale-[1.02] bg-primary text-primary-foreground shadow-[0_40px_90px_-30px_color-mix(in_oklab,var(--color-primary)_70%,transparent)] sm:p-6"
                       : "card-surface"
                   }`}
                 >
                   {featured && (
-                    <span className="mb-3 inline-flex w-fit rounded-full bg-ink px-3 py-1 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-primary">
+                    <span className="mb-2.5 inline-flex w-fit rounded-full bg-ink px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.2em] text-primary">
                       Recommended
                     </span>
                   )}
-                  <h3 className={`text-xl font-bold ${featured ? "text-primary-foreground" : "text-foreground"}`}>{p.name}</h3>
-                  <p className={`mt-1 text-xs ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{p.tag}</p>
-                  <p className={`mt-5 font-display text-4xl font-bold ${featured ? "text-primary-foreground" : "text-primary"}`}>
+                  <h3 className={`text-lg font-bold ${featured ? "text-primary-foreground" : "text-foreground"}`}>{p.name}</h3>
+                  <p className={`mt-1 text-[0.7rem] ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{p.tag}</p>
+                  <p className={`mt-3.5 font-display text-3xl font-bold ${featured ? "text-primary-foreground" : "text-primary"}`}>
                     {p.price}
                     {p.price !== "Custom" && (
-                      <span className={`ml-1 text-sm font-medium ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>/mo</span>
+                      <span className={`ml-1 text-xs font-medium ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>/mo</span>
                     )}
                   </p>
-                  <ul className="mt-6 grid flex-1 gap-2.5">
+                  <ul className="mt-4 grid flex-1 gap-2">
                     {p.features.map((f) => (
-                      <li key={f} className={`flex items-start gap-3 text-sm ${featured ? "text-primary-foreground/90" : "text-foreground/90"}`}>
+                      <li key={f} className={`flex items-start gap-2.5 text-[0.8rem] leading-snug ${featured ? "text-primary-foreground/90" : "text-foreground/90"}`}>
                         <span
-                          className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${
+                          className={`mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full ${
                             featured ? "bg-ink text-primary" : "bg-primary/15 text-primary"
                           }`}
                         >
@@ -161,8 +163,8 @@ export function PricingSection() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8">
-                    <ChatButton variant={featured ? "black" : "outline"} className="w-full" />
+                  <div className="mt-6">
+                    <ChatButton variant={featured ? "black" : "outline"} className="w-full py-2.5 text-sm" />
                   </div>
                 </div>
               </div>
