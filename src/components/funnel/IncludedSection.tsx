@@ -76,14 +76,11 @@ export function IncludedSection() {
 
       <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {works.map((w, i) => (
-          <Reveal key={w.title} delay={i * 90}>
+          <Reveal key={w.title} delay={i * 90} className={w.offset}>
             <article className="group">
-              <div
-                className="relative overflow-hidden rounded-3xl border border-primary/15 shadow-[0_28px_60px_-32px_rgba(0,0,0,0.95)] transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:border-primary/45 group-hover:shadow-[0_36px_70px_-28px_color-mix(in_oklab,var(--color-primary)_30%,transparent)]"
-                style={{ background: w.gradient }}
-              >
+              <div className="relative overflow-hidden rounded-3xl border border-primary/15 bg-charcoal shadow-[0_28px_60px_-32px_rgba(0,0,0,0.95)] transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:border-primary/45 group-hover:shadow-[0_36px_70px_-28px_color-mix(in_oklab,var(--color-primary)_30%,transparent)]">
                 <div className="relative aspect-video w-full">
-                  <Texture kind={w.texture} />
+                  <img src={w.img} alt={`${w.title} — ${w.category}`} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
                   <div className="absolute inset-0 bg-[radial-gradient(65%_65%_at_50%_50%,rgba(0,0,0,0.25),rgba(0,0,0,0.7))]" />
                   <div className="absolute inset-0 grid place-items-center">
                     <PlayButton size={54} />
