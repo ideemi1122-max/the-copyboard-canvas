@@ -10,9 +10,9 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { label: "Total Views — Last 90 Days", value: 18.4, suffix: "M", delta: "+212%", points: [8, 14, 11, 22, 27, 24, 38, 46] },
-  { label: "Engagement Rate — All Channels", value: 9.7, suffix: "%", delta: "+64%", points: [10, 12, 18, 17, 26, 31, 34, 44] },
-  { label: "Content Output — Per Month", value: 148, suffix: "+", delta: "+3.4x", points: [6, 9, 15, 14, 24, 30, 36, 48] },
+  { label: "Total Views", value: 18.4, suffix: "M", delta: "+212%", points: [8, 14, 11, 22, 27, 24, 38, 46] },
+  { label: "Engagement Rate", value: 9.7, suffix: "%", delta: "+64%", points: [10, 12, 18, 17, 26, 31, 34, 44] },
+  { label: "Content Output", value: 148, suffix: "+", delta: "+3.4x", points: [6, 9, 15, 14, 24, 30, 36, 48] },
 ];
 
 function sparkPath(points: number[], w = 240, h = 72) {
@@ -27,13 +27,13 @@ function StatCard({ stat, delay, active, index }: { stat: Stat; delay: number; a
   const path = sparkPath(stat.points);
   const shown = stat.value % 1 === 0 ? Math.round(n).toString() : n.toFixed(1);
   return (
-    <div className="card-surface flex h-full flex-col rounded-3xl p-6">
+    <div className="card-surface flex h-full flex-col rounded-3xl p-4 sm:p-6">
       <div className="flex items-center gap-3">
-        <span className="font-display text-4xl font-bold text-foreground sm:text-5xl">
+        <span className="font-display text-3xl font-bold text-foreground sm:text-4xl lg:text-[2.6rem]">
           {shown}
           <span className="text-primary">{stat.suffix}</span>
         </span>
-        <span className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2.5 py-1 text-xs font-semibold text-primary">
+        <span className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2 py-0.5 text-[0.65rem] font-semibold text-primary sm:px-2.5 sm:py-1 sm:text-xs">
           <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M3 11 8 6l2.5 2.5L14 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M14 5h-3.4M14 5v3.4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -41,7 +41,7 @@ function StatCard({ stat, delay, active, index }: { stat: Stat; delay: number; a
           {stat.delta}
         </span>
       </div>
-      <svg viewBox="0 0 240 72" className="mt-5 h-20 w-full" aria-hidden="true">
+      <svg viewBox="0 0 240 72" className="mt-4 h-16 w-full sm:h-20" aria-hidden="true">
         <defs>
           <linearGradient id={`area-${index}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#FFD400" stopOpacity="0.45" />
@@ -60,7 +60,7 @@ function StatCard({ stat, delay, active, index }: { stat: Stat; delay: number; a
           style={{ transition: "stroke-dashoffset 1.3s cubic-bezier(0.22,1,0.36,1)", transitionDelay: `${delay}ms` }}
         />
       </svg>
-      <p className="mt-4 text-xs text-muted-foreground">{stat.label}</p>
+      <p className="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">{stat.label}</p>
     </div>
   );
 }
@@ -68,11 +68,8 @@ function StatCard({ stat, delay, active, index }: { stat: Stat; delay: number; a
 function ChartCard({ active }: { active: boolean }) {
   const line = "M8 150 L52 126 L96 108 L140 104 L184 62 L228 78 L272 46 L316 26";
   return (
-    <div className="card-surface flex h-full flex-col rounded-3xl p-6">
-      <h3 className="text-lg font-bold leading-snug text-foreground">
-        Get More Clients, <span className="text-primary">Automate Real Creative Work</span>
-      </h3>
-      <div className="relative mt-4 flex-1">
+    <div className="card-surface flex h-full flex-col rounded-3xl p-4 sm:p-6">
+      <div className="relative flex-1">
         <svg viewBox="0 0 330 170" className="w-full" aria-hidden="true">
           <defs>
             <linearGradient id="bigArea" x1="0" y1="0" x2="0" y2="1">
@@ -112,10 +109,10 @@ function ChartCard({ active }: { active: boolean }) {
           Requests Automated
         </Pill>
         <Pill className="left-[46%] top-[62%] bg-ink text-primary" tail="bg-ink">
-          New Clients Onboarded
+          New Clients
         </Pill>
       </div>
-      <p className="mt-4 text-xs text-muted-foreground">Client growth curve — first 6 months on CopyBoard</p>
+      <p className="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">Client Growth</p>
     </div>
   );
 }
@@ -136,7 +133,7 @@ export function GrowthSection() {
   const lifts = ["mt-8", "mt-0", "mt-0", "mt-8"];
 
   return (
-    <section className="relative bg-ink px-5 py-24">
+    <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="Real Growth"
         title="Content that actually moves the numbers"

@@ -70,7 +70,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="relative bg-ink px-5 py-24">
+    <section className="relative bg-ink px-5 py-16 sm:py-24">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2">
         {/* fanned mockups */}
         <Reveal className="order-1">
@@ -120,7 +120,7 @@ export function PricingSection() {
       </div>
 
       {/* pricing cards */}
-      <div className="mx-auto mt-20 grid max-w-4xl grid-cols-1 items-center gap-5 sm:mx-auto sm:max-w-md lg:max-w-5xl lg:grid-cols-3">
+      <div className="mx-auto mt-24 grid max-w-4xl grid-cols-1 items-center gap-5 sm:mx-auto sm:max-w-md lg:max-w-5xl lg:grid-cols-3">
         {plans.map((p, i) => {
           const featured = p.name === "Standard";
           return (

@@ -3,7 +3,7 @@ import { brandLogos } from "./brand-logos";
 
 export function TrustedSection() {
   return (
-    <section className="relative bg-ink px-5 py-24">
+    <section className="relative bg-ink px-5 py-16 sm:py-24">
       <div className="relative mx-auto max-w-3xl text-center">
         <GemAccent kind="diamond" size={44} className="absolute -top-6 left-2 sm:left-8" />
         <GemAccent kind="star" size={38} className="absolute -top-4 right-2 sm:right-10" />
