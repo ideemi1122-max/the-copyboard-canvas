@@ -1,18 +1,8 @@
 import { useEffect, useState } from "react";
-import { ChatButton, GemAccent, PinClip, PlayButton } from "./primitives";
+import { GemAccent, PinClip, PlayButton } from "./primitives";
+import { PosterCards } from "./PosterCards";
 import vsl from "@/assets/10008.png.asset.json";
 import mark from "@/assets/copyboard-mark.png.asset.json";
-import thumbYt from "@/assets/gen/thumb-yt.jpg";
-import thumbPodcast from "@/assets/gen/thumb-podcast.jpg";
-import thumbAd from "@/assets/gen/thumb-ad.jpg";
-import thumbShort from "@/assets/gen/thumb-short.jpg";
-
-const miniThumbs = [
-  { src: thumbYt, alt: "YouTube thumbnail design sample", rot: -9 },
-  { src: thumbPodcast, alt: "Podcast cover art sample", rot: 5 },
-  { src: thumbAd, alt: "Social ad graphic sample", rot: -4 },
-  { src: thumbShort, alt: "Short-form vertical clip sample", rot: 8 },
-];
 
 function useStaged(steps: number, gap = 150) {
   const [stage, setStage] = useState(0);
@@ -35,10 +25,10 @@ const rise = (on: boolean, delayless = false) =>
   }`;
 
 export function HeroSection() {
-  const stage = useStaged(6, 140);
+  const stage = useStaged(5, 140);
 
   return (
-    <section className="relative isolate overflow-hidden bg-ink px-5 pb-24 pt-28 sm:pt-32">
+    <section className="relative isolate overflow-hidden bg-ink px-5 pb-16 pt-28 sm:pb-24 sm:pt-32">
       <div className="pointer-events-none absolute inset-0 grid-texture opacity-[0.35]" />
       <div className="pointer-events-none absolute inset-x-0 -top-40 h-[80vh] beam-glow" />
 
@@ -76,13 +66,8 @@ export function HeroSection() {
           one flat monthly fee, made by real human creators, delivered fast.
         </p>
 
-        <div className={`mt-8 ${rise(stage >= 5)}`}>
-          <ChatButton className="px-9 py-4 text-base" />
-          <p className="mt-4 text-xs text-muted-foreground">No contracts · Real humans · Cancel anytime</p>
-        </div>
-
         {/* VSL card */}
-        <div className={`mt-14 w-full max-w-[600px] ${rise(stage >= 6)}`}>
+        <div className={`mt-12 w-full max-w-[600px] ${rise(stage >= 5)}`}>
           <div className="group relative mx-auto rotate-[-1.5deg] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:rotate-0">
             <PinClip />
             <div className="relative overflow-hidden rounded-3xl border border-primary/25 shadow-[0_44px_80px_-30px_rgba(0,0,0,0.95)]">
@@ -106,26 +91,10 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* scattered mini thumbnails */}
-          <div className="mt-9 flex items-center justify-center">
-            {miniThumbs.map((t, i) => (
-              <span
-                key={t.alt}
-                style={{ rotate: `${t.rot}deg`, marginLeft: i === 0 ? 0 : -16, zIndex: i }}
-                className="relative block h-[4.75rem] w-32 overflow-hidden rounded-xl border border-primary/20 bg-charcoal shadow-[0_16px_28px_-16px_rgba(0,0,0,0.9)] transition-transform duration-500 hover:!rotate-0 sm:h-[5.5rem] sm:w-36"
-              >
-                <img src={t.src} alt={t.alt} loading="lazy" className="h-full w-full object-cover" />
-                <span className="absolute inset-0 bg-ink/25" />
-                <span className="absolute bottom-1.5 right-1.5 grid h-6 w-6 place-items-center rounded-full bg-ink/80 text-primary">
-                  <svg width="9" height="9" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                    <path d="M4.5 2.8 13 8l-8.5 5.2z" />
-                  </svg>
-                </span>
-              </span>
-            ))}
-          </div>
         </div>
       </div>
+
+      <PosterCards />
     </section>
   );
 }

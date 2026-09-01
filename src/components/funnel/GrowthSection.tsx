@@ -136,7 +136,7 @@ export function GrowthSection() {
   const lifts = ["mt-8", "mt-0", "mt-0", "mt-8"];
 
   return (
-    <section className="relative bg-ink px-5 py-24">
+    <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="Real Growth"
         title="Content that actually moves the numbers"

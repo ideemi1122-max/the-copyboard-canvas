@@ -15,7 +15,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="relative bg-ink px-5 py-24">
+    <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="Services"
         title="Everything your brand needs, made by hand"

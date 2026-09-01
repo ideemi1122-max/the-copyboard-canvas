@@ -32,7 +32,7 @@ export function ProcessSection() {
   const active = useInView(ref);
 
   return (
-    <section className="relative overflow-hidden bg-ink px-5 py-24 text-center">
+    <section className="relative overflow-hidden bg-ink px-5 py-16 sm:py-24 text-center">
       <div className="pointer-events-none absolute inset-0 grid-texture opacity-[0.25]" />
 
       <div className="relative mx-auto max-w-2xl">

@@ -9,8 +9,8 @@ export function BrandDivider() {
     <div className="relative w-full overflow-hidden bg-ink" aria-hidden="true">
       <svg
         className="block h-11 w-full sm:h-14"
-        viewBox="0 0 80 40"
-        preserveAspectRatio="none"
+        viewBox="0 0 1600 40"
+        preserveAspectRatio="xMinYMid slice"
         role="presentation"
         focusable="false"
       >
@@ -31,7 +31,7 @@ export function BrandDivider() {
             <path d={sparkle(80, 32, 3)} fill="#0D0D0C" />
           </pattern>
         </defs>
-        <rect width="80" height="40" fill="url(#cb-ribbon)" />
+        <rect width="1600" height="40" fill="url(#cb-ribbon)" />
       </svg>
       <span className="pointer-events-none absolute inset-0 bg-ink/25" />
     </div>
