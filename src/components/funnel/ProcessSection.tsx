@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ChatButton, GemAccent, Reveal, useInView } from "./primitives";
+import { GemAccent, Reveal, useInView } from "./primitives";
 
 const steps = [
   {
