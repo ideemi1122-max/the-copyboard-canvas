@@ -17,7 +17,7 @@ type Poster = {
 const posters: Poster[] = [
   { lead: "Edits that", hl: "actually land", badge: "48h turnaround", category: "Video Editing", img: editing.url, rot: -7 },
   { lead: "Podcasts", hl: "worth binging", badge: "120+ eps / mo", category: "Podcast Editing", img: podcast.url, rot: 4, invert: true },
-  { lead: "Scroll-", hl: "stopping", tail: "posts", badge: "9.7% engagement", category: "Short-Form", img: social.url, rot: -3 },
+  { lead: "Posts that", hl: "stop scrolls", badge: "9.7% engagement", category: "Short-Form", img: social.url, rot: -3 },
   { lead: "Brands", hl: "people remember", badge: "3.4x output", category: "Branding & Design", img: branding.url, rot: 8, invert: true },
 ];
 
