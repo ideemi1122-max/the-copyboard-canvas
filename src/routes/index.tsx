@@ -7,8 +7,11 @@ import { ServicesSection } from "@/components/funnel/ServicesSection";
 import { TrustedSection } from "@/components/funnel/TrustedSection";
 import { PricingSection } from "@/components/funnel/PricingSection";
 import { ProcessSection } from "@/components/funnel/ProcessSection";
+import { ReviewStrip } from "@/components/funnel/ReviewStrip";
+import { FaqSection } from "@/components/funnel/FaqSection";
+import { ClosingCTA } from "@/components/funnel/ClosingCTA";
 import { ChatButton } from "@/components/funnel/primitives";
-import mark from "@/assets/copyboard-mark.png.asset.json";
+import { CopyBoardMark } from "@/components/funnel/CopyBoardMark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
