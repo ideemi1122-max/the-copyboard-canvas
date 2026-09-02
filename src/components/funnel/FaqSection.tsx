@@ -80,7 +80,7 @@ export function FaqSection() {
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary">Got Questions?</p>
           <h2 className="mt-3 flex items-center justify-center gap-3 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             FAQ
-            <span className="grid h-9 w-9 place-items-center rounded-full border-2 border-primary text-primary sm:h-10 sm:w-10">
+            <span className="relative grid h-9 w-9 place-items-center rounded-full border-2 border-primary text-primary sm:h-10 sm:w-10">
               <span className="text-sm font-bold">?</span>
               <span className="absolute translate-x-[14px] translate-y-[14px] h-3 w-[2px] rotate-[-45deg] rounded bg-primary sm:translate-x-[16px] sm:translate-y-[16px]" />
             </span>

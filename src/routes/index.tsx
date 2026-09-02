@@ -40,7 +40,7 @@ function FunnelPage() {
     <main className="min-h-screen bg-ink">
       <header className="absolute inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-5 sm:px-10">
         <span className="flex items-center gap-2.5">
-          <img src={mark.url} alt="CopyBoard" className="h-9 w-9 rounded-full object-contain" />
+          <CopyBoardMark size={30} className="h-[30px] w-[30px] shrink-0 sm:h-9 sm:w-9" />
           <span className="font-display text-lg font-bold tracking-tight text-foreground">CopyBoard</span>
         </span>
         <ChatButton className="hidden px-5 py-2.5 text-xs sm:inline-flex" />
@@ -51,9 +51,12 @@ function FunnelPage() {
       <GrowthSection />
       <IncludedSection />
       <ServicesSection />
-      <TrustedSection />
-      <PricingSection />
       <ProcessSection />
+      <TrustedSection />
+      <ReviewStrip />
+      <PricingSection />
+      <FaqSection />
+      <ClosingCTA />
     </main>
   );
 }
