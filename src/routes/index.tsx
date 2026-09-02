@@ -52,6 +52,7 @@ function FunnelPage() {
       <IncludedSection />
       <ServicesSection />
       <ProcessSection />
+      <BrandDivider />
       <TrustedSection />
       <ReviewStrip />
       <PricingSection />
