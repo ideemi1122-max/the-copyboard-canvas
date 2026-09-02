@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GemAccent, PinClip, PlayButton } from "./primitives";
 import { PosterCards } from "./PosterCards";
 import vsl from "@/assets/10008.png.asset.json";
-import mark from "@/assets/copyboard-mark.png.asset.json";
+import { CopyBoardMark } from "./CopyBoardMark";
 
 function useStaged(steps: number, gap = 150) {
   const [stage, setStage] = useState(0);
@@ -123,7 +123,7 @@ function StarburstBadge() {
 function MarkBadge() {
   return (
     <span className="grid h-16 w-16 place-items-center rounded-full border border-primary/40 bg-charcoal p-2 shadow-[0_0_36px_-12px_color-mix(in_oklab,var(--color-primary)_70%,transparent)]">
-      <img src={mark.url} alt="" className="h-full w-full rounded-full object-contain" />
+      <CopyBoardMark size={40} className="h-full w-full" />
     </span>
   );
 }
