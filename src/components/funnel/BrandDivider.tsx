@@ -1,13 +1,19 @@
-import pattern from "@/assets/copyboard-pattern.png.asset.json";
+import pattern from "@/assets/copyboard-divider-yellow.png.asset.json";
 
-/** Official CopyBoard brand pattern band, tiled horizontally. */
+/** Official CopyBoard brand pattern band, tiled horizontally on ink black. */
 export function BrandDivider() {
   return (
     <div
-      className="w-full bg-[#FFD400] bg-repeat-x bg-[length:auto_240%] bg-center h-[62px] sm:h-[100px]"
-      style={{ backgroundImage: `url(${pattern.url})` }}
-      role="presentation"
       aria-hidden="true"
+      role="presentation"
+      className="h-[48px] w-full sm:h-[72px]"
+      style={{
+        backgroundColor: "#0D0D0C",
+        backgroundImage: `url(${pattern.url})`,
+        backgroundRepeat: "repeat-x",
+        backgroundSize: "auto 100%",
+        backgroundPosition: "center",
+      }}
     />
   );
 }
