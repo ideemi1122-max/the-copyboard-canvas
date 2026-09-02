@@ -16,11 +16,11 @@ type Review = {
 };
 
 const reviews: Review[] = [
-  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-0 sm:top-0 sm:w-[270px]" },
+  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-[1%] sm:top-0 sm:w-[270px]" },
   { img: r2.url, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-0 sm:top-6 sm:w-[280px]" },
   { img: r3.url, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[70px] sm:w-[300px] sm:-translate-x-1/2", focal: true },
-  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-[6%] sm:bottom-0 sm:w-[255px]" },
-  { img: r5.url, rot: -5, mRot: -2.5, z: 25, pos: "sm:absolute sm:right-[6%] sm:bottom-2 sm:w-[250px]" },
+  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-[13%] sm:bottom-0 sm:w-[255px]" },
+  { img: r5.url, rot: -5, mRot: -2.5, z: 25, pos: "sm:absolute sm:right-[13%] sm:bottom-2 sm:w-[250px]" },
 ];
 
 function Chip({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -72,7 +72,7 @@ export function ReviewStrip() {
 
         <div
           ref={ref}
-          className="relative mx-auto mt-6 flex w-full max-w-[340px] flex-col items-center gap-5 sm:mt-4 sm:block sm:h-[430px] sm:max-w-[800px]"
+          className="relative mx-auto mt-6 flex w-full max-w-[340px] flex-col items-center gap-5 sm:mt-4 sm:block sm:h-[360px] sm:max-w-[800px]"
         >
           {reviews.map((rv, i) => (
             <figure
