@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GemAccent, PinClip, PlayButton } from "./primitives";
 import { PosterCards } from "./PosterCards";
 import vsl from "@/assets/10008.png.asset.json";
-import { CopyBoardMark } from "./CopyBoardMark";
+
 
 function useStaged(steps: number, gap = 150) {
   const [stage, setStage] = useState(0);
@@ -39,9 +39,6 @@ export function HeroSection() {
       {/* decorative stickers */}
       <div className="pointer-events-none absolute left-2 top-[46%] hidden -rotate-12 sm:block lg:left-10">
         <StarburstBadge />
-      </div>
-      <div className="pointer-events-none absolute right-3 top-[58%] hidden rotate-[14deg] sm:block lg:right-12">
-        <MarkBadge />
       </div>
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -117,14 +114,6 @@ function StarburstBadge() {
       <span className="relative text-[0.6rem] font-bold uppercase tracking-[0.14em] text-primary-foreground">
         Unlimited
       </span>
-    </span>
-  );
-}
-
-function MarkBadge() {
-  return (
-    <span className="grid h-16 w-16 place-items-center rounded-full border border-primary/40 bg-charcoal p-2 shadow-[0_0_36px_-12px_color-mix(in_oklab,var(--color-primary)_70%,transparent)]">
-      <CopyBoardMark size={40} className="h-full w-full" />
     </span>
   );
 }

@@ -1,9 +1,9 @@
-import { PlayButton, Reveal } from "./primitives";
+import { Reveal } from "./primitives";
 
 const slots = [
-  { id: "testimonial-1", featured: false },
-  { id: "testimonial-2", featured: true },
-  { id: "testimonial-3", featured: false },
+  { id: "testimonial-1", src: "https://www.youtube.com/embed/D6WYHjU71Gk", featured: false },
+  { id: "testimonial-2", src: "https://www.youtube.com/embed/YqkZL2Vjo5w", featured: true },
+  { id: "testimonial-3", src: "https://www.youtube.com/embed/DQk1XuF0TFY", featured: false },
 ];
 
 export function TestimonialsSection() {
@@ -20,27 +20,29 @@ export function TestimonialsSection() {
         </h2>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 items-center gap-6 lg:grid-cols-3">
+      <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 items-center justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {slots.map((s, i) => (
-          <Reveal key={s.id} delay={i * 110} className={s.featured ? "order-first lg:order-none" : ""}>
+          <Reveal
+            key={s.id}
+            delay={i * 110}
+            className={`w-full max-w-[300px] ${s.featured ? "order-first sm:col-span-2 lg:order-none lg:col-span-1" : ""}`}
+          >
             <div
               id={s.id}
               data-testimonial-slot={s.id}
-              className={`group relative flex aspect-[4/5] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border border-primary/20 bg-charcoal shadow-[0_28px_60px_-30px_rgba(0,0,0,0.95)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-primary/50 ${
+              className={`group relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-3xl border border-primary/20 bg-charcoal shadow-[0_28px_60px_-30px_rgba(0,0,0,0.95)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/50 ${
                 s.featured ? "lg:scale-[1.06]" : ""
               }`}
             >
-              <span className="pointer-events-none absolute inset-0 grid-texture opacity-[0.3]" />
-              <button
-                type="button"
-                aria-label="Video testimonial coming soon"
-                className="group relative grid place-items-center focus-visible:outline-none"
-              >
-                <PlayButton size={58} />
-              </button>
-              <p className="relative mt-5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Video coming soon
-              </p>
+              <iframe
+                src={s.src}
+                title={`Client video testimonial ${i + 1}`}
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </Reveal>
         ))}
