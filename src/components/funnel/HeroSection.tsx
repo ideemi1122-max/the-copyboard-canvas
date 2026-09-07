@@ -117,11 +117,3 @@ function StarburstBadge() {
     </span>
   );
 }
-
-function MarkBadge() {
-  return (
-    <span className="grid h-16 w-16 place-items-center rounded-full border border-primary/40 bg-charcoal p-2 shadow-[0_0_36px_-12px_color-mix(in_oklab,var(--color-primary)_70%,transparent)]">
-      <CopyBoardMark size={40} className="h-full w-full" />
-    </span>
-  );
-}
