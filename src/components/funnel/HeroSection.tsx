@@ -40,9 +40,6 @@ export function HeroSection() {
       <div className="pointer-events-none absolute left-2 top-[46%] hidden -rotate-12 sm:block lg:left-10">
         <StarburstBadge />
       </div>
-      <div className="pointer-events-none absolute right-3 top-[58%] hidden rotate-[14deg] sm:block lg:right-12">
-        <MarkBadge />
-      </div>
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
         <div className={rise(stage >= 1)}>
