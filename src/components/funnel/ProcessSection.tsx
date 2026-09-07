@@ -38,8 +38,9 @@ export function ProcessSection() {
       <div className="relative mx-auto max-w-2xl">
         <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary">How It Works</p>
         <h2 className="mt-4 text-3xl font-bold leading-[1.15] sm:text-4xl md:text-[2.75rem]">
-          Three steps from brief to <span className="marker-highlight">published content</span>
+          Three Steps From Brief To <span className="marker-highlight">Published Content</span>
         </h2>
+
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           No onboarding maze, no scoping calls, no surprise invoices. Send the request, we start today.
         </p>

@@ -10,10 +10,11 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { label: "Total Views", value: 18.4, suffix: "M", delta: "+212%", points: [8, 14, 11, 22, 27, 24, 38, 46] },
-  { label: "Engagement Rate", value: 9.7, suffix: "%", delta: "+64%", points: [10, 12, 18, 17, 26, 31, 34, 44] },
+  { label: "Total Views", value: 250, suffix: "M+", delta: "+212%", points: [8, 14, 11, 22, 27, 24, 38, 46] },
+  { label: "Engagement Rate", value: 32, suffix: "%", delta: "+64%", points: [10, 12, 18, 17, 26, 31, 34, 44] },
   { label: "Content Output", value: 148, suffix: "+", delta: "+3.4x", points: [6, 9, 15, 14, 24, 30, 36, 48] },
 ];
+
 
 function sparkPath(points: number[], w = 240, h = 72) {
   const max = Math.max(...points);
@@ -136,7 +137,7 @@ export function GrowthSection() {
     <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="Real Growth"
-        title="Content that actually moves the numbers"
+        title="Content That Actually Moves The Numbers"
         sub="Our creators ship every day, and the channels we run compound fast. Here's what our partners see."
       />
 

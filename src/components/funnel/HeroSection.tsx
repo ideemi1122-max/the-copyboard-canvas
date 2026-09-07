@@ -54,12 +54,13 @@ export function HeroSection() {
 
         <h1 className="mt-7 text-[2.15rem] font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
           <span className={`block ${rise(stage >= 2)}`}>
-            Your entire content team,
+            Your Entire Content Team,
           </span>
           <span className={`mt-2 block ${rise(stage >= 3)}`}>
-            <span className="marker-highlight">for one flat fee</span>
+            <span className="marker-highlight">For One Flat Fee</span>
           </span>
         </h1>
+
 
         <p className={`mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base ${rise(stage >= 4)}`}>
           Unlimited graphic design, video editing, podcast editing, short-form and long-form content —

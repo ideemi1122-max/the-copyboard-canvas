@@ -29,20 +29,20 @@ const plans = [
   {
     name: "Beginner",
     tag: "For getting started",
-    price: "$2,495",
+    price: "AUD $298/mo",
     features: [
       "One active request at a time",
       "Unlimited graphic design & thumbnails",
       "Short-form video editing",
       "48–72 hour average turnaround",
       "Dedicated request dashboard",
-      "Cancel anytime",
+      "Cancel anytime with 2 Clicks",
     ],
   },
   {
     name: "Standard",
     tag: "For fast-moving brands",
-    price: "$3,995",
+    price: "AUD $539/mo",
     features: [
       "Two active requests at a time",
       "Unlimited design, branding & thumbnails",
@@ -50,23 +50,24 @@ const plans = [
       "24–48 hour average turnaround",
       "Dedicated creative lead on Slack",
       "Priority queue on every request",
-      "Cancel anytime",
+      "Cancel anytime with 2 Clicks",
     ],
   },
   {
     name: "Enterprise",
     tag: "For established corporations",
-    price: "Custom",
+    price: "AUD $799/mo",
     features: [
       "Multiple parallel request lanes",
       "Full creative team assigned to your brand",
       "Brand system & guideline stewardship",
       "Same-day turnaround windows",
       "Quarterly content strategy sessions",
-      "Cancel anytime",
+      "Cancel anytime with 2 Clicks",
     ],
   },
 ];
+
 
 export function PricingSection() {
   return (
@@ -98,8 +99,9 @@ export function PricingSection() {
               The Only Plan You Need
             </p>
             <h2 className="mt-4 text-3xl font-bold leading-[1.12] sm:text-4xl">
-              Unlimited Design. <span className="text-primary">One Flat Fee.</span>
+              Unlimited Content. <span className="text-primary">One Flat Fee.</span>
             </h2>
+
             <ul className="mx-auto mt-7 grid max-w-md gap-2.5 text-left">
               {checklist.map((c) => (
                 <li key={c} className="flex items-start gap-3 text-sm text-foreground/90">
@@ -143,12 +145,10 @@ export function PricingSection() {
                   )}
                   <h3 className={`text-lg font-bold ${featured ? "text-primary-foreground" : "text-foreground"}`}>{p.name}</h3>
                   <p className={`mt-1 text-[0.7rem] ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{p.tag}</p>
-                  <p className={`mt-3.5 font-display text-3xl font-bold ${featured ? "text-primary-foreground" : "text-primary"}`}>
+                  <p className={`mt-3.5 font-display text-2xl font-bold sm:text-[1.75rem] ${featured ? "text-primary-foreground" : "text-primary"}`}>
                     {p.price}
-                    {p.price !== "Custom" && (
-                      <span className={`ml-1 text-xs font-medium ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>/mo</span>
-                    )}
                   </p>
+
                   <ul className="mt-4 grid flex-1 gap-2">
                     {p.features.map((f) => (
                       <li key={f} className={`flex items-start gap-2.5 text-[0.8rem] leading-snug ${featured ? "text-primary-foreground/90" : "text-foreground/90"}`}>

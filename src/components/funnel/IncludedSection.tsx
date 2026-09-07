@@ -57,7 +57,7 @@ export function IncludedSection() {
     <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="What's Included"
-        title="One subscription. Every format you post."
+        title="One Subscription. Every Format You Post."
         sub="Send the brief, we handle the rest — static, motion, audio, short and long. No per-project quotes."
       />
 
