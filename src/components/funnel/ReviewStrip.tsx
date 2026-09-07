@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { useInView } from "./primitives";
 import r1 from "@/assets/review-1.png.asset.json";
-import r2 from "@/assets/review-2.png.asset.json";
 import r3 from "@/assets/review-3.png.asset.json";
 import r4 from "@/assets/review-4.png.asset.json";
 import r5 from "@/assets/review-5.png.asset.json";
@@ -16,12 +15,12 @@ type Review = {
 };
 
 const reviews: Review[] = [
-  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-[1%] sm:top-0 sm:w-[270px]" },
-  { img: r2.url, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-0 sm:top-6 sm:w-[280px]" },
-  { img: r3.url, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[70px] sm:w-[300px] sm:-translate-x-1/2", focal: true },
-  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-[13%] sm:bottom-0 sm:w-[255px]" },
-  { img: r5.url, rot: -5, mRot: -2.5, z: 25, pos: "sm:absolute sm:right-[13%] sm:bottom-2 sm:w-[250px]" },
+  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-[2%] sm:top-2 sm:w-[275px]" },
+  { img: r5.url, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-[2%] sm:top-2 sm:w-[275px]" },
+  { img: r3.url, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[72px] sm:w-[300px] sm:-translate-x-1/2", focal: true },
+  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-1/2 sm:bottom-0 sm:w-[270px] sm:-translate-x-1/2" },
 ];
+
 
 function Chip({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
@@ -50,9 +49,10 @@ export function ReviewStrip() {
           Real Client Reviews
         </p>
         <h2 className="mt-4 text-3xl font-bold leading-[1.14] sm:text-4xl md:text-[2.6rem]">
-          Don't take our word for it —{" "}
-          <span className="marker-highlight">take theirs.</span>
+          Don't Take Our Word For It —{" "}
+          <span className="marker-highlight">Take Theirs.</span>
         </h2>
+
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           Unedited messages from the brands we create for, dropping in week after week.
         </p>

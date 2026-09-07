@@ -11,7 +11,10 @@ import { ReviewStrip } from "@/components/funnel/ReviewStrip";
 import { FaqSection } from "@/components/funnel/FaqSection";
 import { ClosingCTA } from "@/components/funnel/ClosingCTA";
 import { ChatButton } from "@/components/funnel/primitives";
-import { CopyBoardMark } from "@/components/funnel/CopyBoardMark";
+import { CopyBoardLogo } from "@/components/funnel/CopyBoardLogo";
+import { BeforeAfterSection } from "@/components/funnel/BeforeAfterSection";
+import { TestimonialsSection } from "@/components/funnel/TestimonialsSection";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,25 +42,25 @@ function FunnelPage() {
   return (
     <main className="min-h-screen bg-ink">
       <header className="absolute inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-5 sm:px-10">
-        <span className="flex items-center gap-2.5">
-          <CopyBoardMark size={30} className="h-[30px] w-[30px] shrink-0 sm:h-9 sm:w-9" />
-          <span className="font-display text-lg font-bold tracking-tight text-foreground">CopyBoard</span>
-        </span>
+        <CopyBoardLogo className="h-[30px] shrink-0 sm:h-10" />
         <ChatButton className="hidden px-5 py-2.5 text-xs sm:inline-flex" />
       </header>
 
       <HeroSection />
       <BrandDivider />
       <GrowthSection />
+      <BeforeAfterSection />
       <IncludedSection />
       <ServicesSection />
+      <ReviewStrip />
       <ProcessSection />
       <BrandDivider />
       <TrustedSection />
-      <ReviewStrip />
       <PricingSection />
+      <TestimonialsSection />
       <FaqSection />
       <ClosingCTA />
+
     </main>
   );
 }

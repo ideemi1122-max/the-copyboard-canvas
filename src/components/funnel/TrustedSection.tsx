@@ -1,5 +1,12 @@
 import { GemAccent, Reveal } from "./primitives";
-import { brandLogos } from "./brand-logos";
+import b0 from "@/assets/brand_0.png.asset.json";
+import b1 from "@/assets/brand_1.png.asset.json";
+import b2 from "@/assets/brand_2.png.asset.json";
+import b3 from "@/assets/brand_3.png.asset.json";
+import b4 from "@/assets/brand_4.png.asset.json";
+import b5 from "@/assets/brand_5.png.asset.json";
+
+const brands = [b0, b1, b2, b3, b4, b5].map((b, i) => ({ url: b.url, name: `Partner brand ${i + 1}` }));
 
 export function TrustedSection() {
   return (
@@ -17,16 +24,16 @@ export function TrustedSection() {
         </p>
       </div>
 
-      <ul className="mx-auto mt-14 flex max-w-3xl flex-wrap justify-center gap-3 sm:gap-4">
-        {brandLogos.map((b, i) => (
-          <Reveal as="li" key={b.name} delay={i * 35}>
-            <span
-              title={b.name}
-              className="group grid h-14 w-14 place-items-center rounded-full border border-foreground/10 bg-charcoal text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:text-primary hover:shadow-[0_0_28px_-8px_color-mix(in_oklab,var(--color-primary)_70%,transparent)] sm:h-16 sm:w-16"
-            >
-              <svg viewBox="0 0 24 24" role="img" aria-label={b.name} className="h-6 w-6 fill-current sm:h-7 sm:w-7">
-                <path d={b.path} />
-              </svg>
+      <ul className="mx-auto mt-14 grid max-w-4xl grid-cols-3 items-center justify-items-center gap-4 sm:gap-6 lg:grid-cols-6">
+        {brands.map((b, i) => (
+          <Reveal as="li" key={b.name} delay={i * 60} className="w-full">
+            <span className="mx-auto grid h-16 w-16 place-items-center overflow-hidden rounded-full border border-foreground/10 bg-charcoal transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:h-20 sm:w-20">
+              <img
+                src={b.url}
+                alt={b.name}
+                loading="lazy"
+                className="h-full w-full object-cover opacity-90 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+              />
             </span>
           </Reveal>
         ))}

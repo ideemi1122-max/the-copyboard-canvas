@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChatButton } from "./primitives";
-import { CopyBoardMark } from "./CopyBoardMark";
+import { CopyBoardLogo } from "./CopyBoardLogo";
 
 const faqs = [
   {
@@ -133,8 +133,9 @@ export function FaqSection() {
             </svg>
           </span>
 
-          <CopyBoardMark size={62} className="mx-auto" />
-          <h3 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">Still have a question?</h3>
+          <CopyBoardLogo className="mx-auto h-14 sm:h-16" />
+          <h3 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">Still Have A Question?</h3>
+
           <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
             Skip the form. Message us directly and we'll get you sorted in minutes.
           </p>
