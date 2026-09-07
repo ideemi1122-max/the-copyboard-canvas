@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GemAccent, PinClip, PlayButton } from "./primitives";
 import { PosterCards } from "./PosterCards";
 import vsl from "@/assets/10008.png.asset.json";
-import { CopyBoardMark } from "./CopyBoardMark";
+
 
 function useStaged(steps: number, gap = 150) {
   const [stage, setStage] = useState(0);
