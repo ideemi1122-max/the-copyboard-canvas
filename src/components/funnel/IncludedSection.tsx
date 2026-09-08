@@ -115,7 +115,8 @@ export function IncludedSection() {
               <p className="text-xs text-muted-foreground">{w.category}</p>
             </article>
           </Reveal>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
