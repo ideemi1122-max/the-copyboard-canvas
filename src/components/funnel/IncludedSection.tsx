@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PlayButton, Reveal, SectionHeader } from "./primitives";
 import workPodcast from "@/assets/gen/work-podcast.jpg";
 import workYoutube from "@/assets/gen/work-youtube.jpg";
@@ -37,6 +38,7 @@ function ChipIcon({ name }: { name: (typeof chips)[number]["icon"] }) {
 type Work = {
   title: string;
   category: string;
+  tags: string[];
   duration: string;
   progress: number;
   img: string;
@@ -44,27 +46,33 @@ type Work = {
 };
 
 const works: Work[] = [
-  { title: "Podcast Highlight Reel", category: "Podcast Editing", duration: "0:47", progress: 62, img: workPodcast, offset: "lg:mt-0" },
-  { title: "YouTube Long-Form Edit", category: "Long-Form Content", duration: "14:12", progress: 38, img: workYoutube, offset: "lg:mt-10" },
-  { title: "Brand Ad Cutdown", category: "Advertising", duration: "0:22", progress: 78, img: workAd, offset: "lg:mt-2" },
-  { title: "Founder Story Documentary", category: "Long-Form Content", duration: "8:05", progress: 45, img: workDoc, offset: "lg:mt-8" },
-  { title: "Interview Clip Pack", category: "Short-Form Content", duration: "0:58", progress: 55, img: workInterview, offset: "lg:mt-0" },
-  { title: "Instagram Series", category: "Short-Form Content", duration: "1:16", progress: 70, img: workInstagram, offset: "lg:mt-10" },
+  { title: "Podcast Highlight Reel", category: "Podcast Editing", tags: ["Podcast Editing", "Video Editing"], duration: "0:47", progress: 62, img: workPodcast, offset: "lg:mt-0" },
+  { title: "YouTube Long-Form Edit", category: "Long-Form Content", tags: ["Long-Form Content", "Video Editing"], duration: "14:12", progress: 38, img: workYoutube, offset: "lg:mt-10" },
+  { title: "Brand Ad Cutdown", category: "Advertising", tags: ["Branding", "Design", "Video Editing"], duration: "0:22", progress: 78, img: workAd, offset: "lg:mt-2" },
+  { title: "Founder Story Documentary", category: "Long-Form Content", tags: ["Long-Form Content", "Video Editing"], duration: "8:05", progress: 45, img: workDoc, offset: "lg:mt-8" },
+  { title: "Interview Clip Pack", category: "Short-Form Content", tags: ["Short-Form Content", "Video Editing"], duration: "0:58", progress: 55, img: workInterview, offset: "lg:mt-0" },
+  { title: "Instagram Series", category: "Short-Form Content", tags: ["Short-Form Content", "Design", "Branding"], duration: "1:16", progress: 70, img: workInstagram, offset: "lg:mt-10" },
 ];
 
 export function IncludedSection() {
+  const [hovered, setHovered] = useState<string | null>(null);
+
   return (
     <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="What's Included"
-        title="One Subscription. Every Format You Post."
+        title={<>One Subscription. <span className="text-primary">Every Format You Post.</span></>}
         sub="Send the brief, we handle the rest — static, motion, audio, short and long. No per-project quotes."
       />
 
       <ul className="mx-auto mt-10 flex max-w-5xl flex-wrap items-center justify-center gap-3">
         {chips.map((c, i) => (
           <Reveal as="li" key={c.label} delay={i * 60}>
-            <span className="group inline-flex cursor-default items-center gap-2 rounded-full border border-primary/25 bg-charcoal px-3.5 py-2.5 text-xs font-medium text-foreground transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04] hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_14px_30px_-14px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
+            <span
+              onMouseEnter={() => setHovered(c.label)}
+              onMouseLeave={() => setHovered(null)}
+              className="group inline-flex cursor-default items-center gap-2 rounded-full border border-primary/25 bg-charcoal px-3.5 py-2.5 text-xs font-medium text-foreground transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04] hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_14px_30px_-14px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]"
+            >
               <span className="text-primary transition-colors duration-300 group-hover:text-primary-foreground">
                 <ChipIcon name={c.icon} />
               </span>
