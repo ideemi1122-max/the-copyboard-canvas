@@ -1,9 +1,11 @@
 import { Reveal } from "./primitives";
 
+const params = "?rel=0&modestbranding=1";
+
 const slots = [
-  { id: "testimonial-1", src: "https://www.youtube.com/embed/D6WYHjU71Gk", featured: false },
-  { id: "testimonial-2", src: "https://www.youtube.com/embed/YqkZL2Vjo5w", featured: true },
-  { id: "testimonial-3", src: "https://www.youtube.com/embed/DQk1XuF0TFY", featured: false },
+  { id: "testimonial-1", src: `https://www.youtube.com/embed/D6WYHjU71Gk${params}`, featured: false },
+  { id: "testimonial-2", src: `https://www.youtube.com/embed/YqkZL2Vjo5w${params}`, featured: true },
+  { id: "testimonial-3", src: `https://www.youtube.com/embed/DQk1XuF0TFY${params}`, featured: false },
 ];
 
 export function TestimonialsSection() {

@@ -6,11 +6,11 @@ import uiux from "@/assets/10006.png.asset.json";
 import video from "@/assets/10005.jpeg.asset.json";
 
 const services = [
-  { name: "Thumbnails", img: thumbnails.url },
-  { name: "Graphics & Logos", img: graphics.url },
-  { name: "Advertising", img: advertising.url },
-  { name: "UI/UX Designs", img: uiux.url },
-  { name: "Videos & Motion Graphics", img: video.url },
+  { name: "Thumbnails", img: thumbnails.url, href: "https://copyboard.cc/thumbnail" },
+  { name: "Graphics & Logos", img: graphics.url, href: "https://copyboard.cc/graphicslogos" },
+  { name: "Advertising", img: advertising.url, href: "https://copyboard.cc/advertisements" },
+  { name: "UI/UX Designs", img: uiux.url, href: "https://copyboard.cc/uiuxdesign" },
+  { name: "Videos & Motion Graphics", img: video.url, href: "https://copyboard.cc/vmg" },
 ];
 
 export function ServicesSection() {
@@ -18,7 +18,7 @@ export function ServicesSection() {
     <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="Services"
-        title="Everything Your Brand Needs, Made By Hand"
+        title={<>Everything Your Brand Needs, <span className="text-primary">Made By Hand</span></>}
         sub="Five creative lanes, one team, unlimited requests — all handmade by real designers and editors."
       />
 
@@ -36,12 +36,17 @@ export function ServicesSection() {
                 <span className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-primary/20" />
               </div>
               <h3 className="mt-5 text-lg font-bold text-foreground">{s.name}</h3>
-              <button type="button" className="group/link mt-1 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener"
+                className="group/link mt-1 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+              >
                 View Catalogue
                 <span className="transition-transform duration-300 group-hover/link:translate-x-[5px]">
                   <ArrowIcon className="!translate-x-0" />
                 </span>
-              </button>
+              </a>
             </article>
           </Reveal>
         ))}
