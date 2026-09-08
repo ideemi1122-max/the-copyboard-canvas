@@ -137,7 +137,7 @@ export function GrowthSection() {
     <section className="relative bg-ink px-5 py-16 sm:py-24">
       <SectionHeader
         eyebrow="Real Growth"
-        title="Content That Actually Moves The Numbers"
+        title={<>Content That Actually <span className="text-primary">Moves The Numbers</span></>}
         sub="Our creators ship every day, and the channels we run compound fast. Here's what our partners see."
       />
 

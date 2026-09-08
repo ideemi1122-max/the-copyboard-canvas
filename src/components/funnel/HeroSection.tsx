@@ -68,24 +68,38 @@ export function HeroSection() {
         <div className={`mt-12 w-full max-w-[600px] ${rise(stage >= 5)}`}>
           <div className="group relative mx-auto rotate-[-1.5deg] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:rotate-0">
             <PinClip />
-            <div className="relative overflow-hidden rounded-3xl border border-primary/25 shadow-[0_44px_80px_-30px_rgba(0,0,0,0.95)]">
-              <img
-                src={vsl.url}
-                alt="CopyBoard walkthrough video: Arabic Rebels or Turkish Tyranny? — History on Trail"
-                className="aspect-video w-full object-cover"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_50%,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.68)_75%,rgba(0,0,0,0.8)_100%)]" />
-              <span className="absolute left-4 top-4 rounded-full border border-primary/70 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-primary">
-                Live walkthrough
-              </span>
-              <button
-                type="button"
-                aria-label="Play the CopyBoard walkthrough"
-                className="group absolute inset-0 grid place-items-center"
-              >
-                <PlayButton size={72} />
-              </button>
+            <div className="relative aspect-video overflow-hidden rounded-3xl border border-primary/25 shadow-[0_44px_80px_-30px_rgba(0,0,0,0.95)]">
+              {playing ? (
+                <iframe
+                  src="https://www.youtube.com/embed/XY__qSSaNFA?rel=0&modestbranding=1&autoplay=1"
+                  title="CopyBoard walkthrough video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              ) : (
+                <>
+                  <img
+                    src="https://i.ytimg.com/vi/XY__qSSaNFA/maxresdefault.jpg"
+                    alt="CopyBoard walkthrough video"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_50%,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0.68)_75%,rgba(0,0,0,0.8)_100%)]" />
+                  <span className="absolute left-4 top-4 rounded-full border border-primary/70 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-primary">
+                    Live walkthrough
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setPlaying(true)}
+                    aria-label="Play the CopyBoard walkthrough"
+                    className="group absolute inset-0 grid place-items-center"
+                  >
+                    <PlayButton size={72} />
+                  </button>
+                </>
+              )}
             </div>
           </div>
 
@@ -111,7 +125,7 @@ function StarburstBadge() {
           opacity="0.9"
         />
       </svg>
-      <span className="relative text-[0.6rem] font-bold uppercase tracking-[0.14em] text-primary-foreground">
+      <span className="relative text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-primary-foreground">
         Unlimited
       </span>
     </span>

@@ -53,7 +53,7 @@ export function BeforeAfterSection() {
             The CopyBoard Effect
           </p>
           <h2 className="mt-4 text-3xl font-bold leading-[1.14] sm:text-4xl md:text-[2.6rem]">
-            Before CopyBoard, And After.
+            Before CopyBoard, <span className="text-primary">And After.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
             Same brand. Two very different realities.

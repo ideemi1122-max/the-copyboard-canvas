@@ -40,14 +40,16 @@ export function ChatButton({
     black: "bg-ink text-foreground hover:bg-charcoal-2",
   };
   return (
-    <button
-      type="button"
+    <a
+      href="https://api.leadconnectorhq.com/widget/booking/XHmJCxFl4NB4MKGUNiqC"
+      target="_blank"
+      rel="noopener"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-tight transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 ${styles[variant]} ${className}`}
     >
       <ChatBubble />
       {label}
       <ArrowIcon />
-    </button>
+    </a>
   );
 }
 

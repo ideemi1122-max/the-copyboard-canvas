@@ -61,22 +61,6 @@ export function FaqSection() {
 
       <div className="relative mx-auto max-w-[820px]">
         <div className="relative text-center">
-          {/* script accents — desktop only */}
-          <span className="pointer-events-none absolute -top-2 left-0 hidden select-none text-primary lg:block">
-            <span className="block -rotate-12 font-display text-xl italic">asked</span>
-            <svg width="56" height="30" viewBox="0 0 56 30" fill="none" aria-hidden="true">
-              <path d="M4 4c14 2 24 10 30 22" stroke="#FFD400" strokeWidth="2" strokeLinecap="round" />
-              <path d="M34 26l-8-3M34 26l1-8" stroke="#FFD400" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </span>
-          <span className="pointer-events-none absolute -top-2 right-0 hidden select-none text-primary lg:block">
-            <span className="block rotate-12 font-display text-xl italic">answered</span>
-            <svg width="56" height="30" viewBox="0 0 56 30" fill="none" aria-hidden="true">
-              <path d="M52 4C38 6 28 14 22 26" stroke="#FFD400" strokeWidth="2" strokeLinecap="round" />
-              <path d="M22 26l8-3M22 26l-1-8" stroke="#FFD400" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </span>
-
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary">Got Questions?</p>
           <h2 className="mt-3 flex items-center justify-center gap-3 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             FAQ
@@ -133,7 +117,7 @@ export function FaqSection() {
             </svg>
           </span>
 
-          <CopyBoardLogo className="mx-auto h-14 sm:h-16" />
+          <CopyBoardLogo className="mx-auto h-20 sm:h-28" />
           <h3 className="mt-4 text-2xl font-bold text-foreground sm:text-3xl">Still Have A Question?</h3>
 
           <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
