@@ -95,7 +95,10 @@ export function PricingSection() {
 
         <Reveal delay={120} className="order-2">
           <div className="relative text-center lg:text-left">
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary">
+            <span className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-primary">
+              Avail 20% Off Today
+            </span>
+            <p className="mt-3 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary">
               The Only Plan You Need
             </p>
             <h2 className="mt-4 text-3xl font-bold leading-[1.12] sm:text-4xl">
@@ -112,11 +115,6 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <div className="mx-auto mt-7 max-w-md text-center">
-              <span className="inline-block rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
-                Avail 20% Off Today
-              </span>
-            </div>
           </div>
         </Reveal>
       </div>
