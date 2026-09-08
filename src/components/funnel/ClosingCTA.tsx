@@ -9,7 +9,7 @@ export function ClosingCTA() {
         <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-primary/35 bg-charcoal px-6 py-12 shadow-[0_0_90px_-40px_color-mix(in_oklab,var(--color-primary)_85%,transparent)] sm:px-12">
           <span className="pointer-events-none absolute inset-x-0 -top-20 h-40 beam-glow" />
           <h3 className="relative text-2xl font-bold leading-snug sm:text-3xl">
-            Your next request could be done by tomorrow
+            Your next request could be <span className="text-primary">done by tomorrow</span>
           </h3>
           <p className="relative mx-auto mt-3 max-w-lg text-sm text-muted-foreground">
             Tell us what you need this week — we'll show you exactly how fast your queue moves.

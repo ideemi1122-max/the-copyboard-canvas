@@ -17,7 +17,7 @@ export function TrustedSection() {
         <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-primary">Trusted By</p>
         <h2 className="mt-4 flex flex-wrap items-center justify-center gap-x-3 text-3xl font-bold leading-[1.12] sm:text-4xl md:text-[2.75rem]">
           <GemAccent kind="star" size={34} className="shrink-0" />
-          <span>Over 50 Brands Partnered With Us</span>
+          <span>Over 50 Brands <span className="text-primary">Partnered With Us</span></span>
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           Creators, agencies and product brands keep their content pipeline full with CopyBoard — month after month.
