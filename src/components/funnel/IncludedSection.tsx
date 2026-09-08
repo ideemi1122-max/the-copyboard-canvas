@@ -83,9 +83,19 @@ export function IncludedSection() {
       </ul>
 
       <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {works.map((w, i) => (
+        {works.map((w, i) => {
+          const match = hovered ? w.tags.includes(hovered) : true;
+          return (
           <Reveal key={w.title} delay={i * 90} className={w.offset}>
-            <article className="group">
+            <article
+              className={`group transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                hovered
+                  ? match
+                    ? "scale-[1.02] opacity-100"
+                    : "scale-[0.98] opacity-40"
+                  : ""
+              }`}
+            >
               <div className="relative overflow-hidden rounded-3xl border border-primary/15 bg-charcoal shadow-[0_28px_60px_-32px_rgba(0,0,0,0.95)] transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:border-primary/45 group-hover:shadow-[0_36px_70px_-28px_color-mix(in_oklab,var(--color-primary)_30%,transparent)]">
                 <div className="relative aspect-video w-full">
                   <img src={w.img} alt={`${w.title} — ${w.category}`} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
