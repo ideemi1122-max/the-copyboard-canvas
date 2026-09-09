@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { GemAccent, PinClip, PlayButton } from "./primitives";
 import { PosterCards } from "./PosterCards";
-import vsl from "@/assets/10008.png.asset.json";
+
 
 
 function useStaged(steps: number, gap = 150) {
@@ -26,6 +26,7 @@ const rise = (on: boolean, delayless = false) =>
 
 export function HeroSection() {
   const stage = useStaged(5, 140);
+  const [playing, setPlaying] = useState(false);
 
   return (
     <section className="relative isolate overflow-hidden bg-ink px-5 pb-16 pt-28 sm:pb-24 sm:pt-32">
