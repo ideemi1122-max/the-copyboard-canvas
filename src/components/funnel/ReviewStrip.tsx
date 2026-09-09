@@ -4,6 +4,8 @@ import r1 from "@/assets/review-1.png.asset.json";
 import r3 from "@/assets/review-3.png.asset.json";
 import r4 from "@/assets/review-4.png.asset.json";
 import r5 from "@/assets/review-5.png.asset.json";
+import r6 from "@/assets/review-6.png.asset.json";
+import r7 from "@/assets/review-7.png.asset.json";
 
 type Review = {
   img: string;
@@ -15,10 +17,12 @@ type Review = {
 };
 
 const reviews: Review[] = [
-  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-[2%] sm:top-2 sm:w-[275px]" },
-  { img: r5.url, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-[2%] sm:top-2 sm:w-[275px]" },
-  { img: r3.url, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[72px] sm:w-[300px] sm:-translate-x-1/2", focal: true },
-  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-1/2 sm:bottom-0 sm:w-[270px] sm:-translate-x-1/2" },
+  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-0 sm:top-0 sm:w-[330px]" },
+  { img: r5.url, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-0 sm:top-0 sm:w-[330px]" },
+  { img: r3.url, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[120px] sm:w-[360px] sm:-translate-x-1/2", focal: true },
+  { img: r6.url, rot: -5, mRot: -2, z: 25, pos: "sm:absolute sm:left-[3%] sm:top-[280px] sm:w-[320px]" },
+  { img: r7.url, rot: 4, mRot: 2, z: 25, pos: "sm:absolute sm:right-[3%] sm:top-[280px] sm:w-[320px]" },
+  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-1/2 sm:top-[440px] sm:w-[330px] sm:-translate-x-1/2" },
 ];
 
 
@@ -58,7 +62,7 @@ export function ReviewStrip() {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-10 flex max-w-[820px] flex-col items-center sm:mt-14">
+      <div className="relative mx-auto mt-10 flex max-w-[920px] flex-col items-center sm:mt-14">
         <Chip className="rotate-[-2deg] sm:absolute sm:left-0 sm:top-2 sm:z-50">★★★★★ loved it</Chip>
 
         {/* pointer arrow (desktop only) */}
@@ -72,7 +76,7 @@ export function ReviewStrip() {
 
         <div
           ref={ref}
-          className="relative mx-auto mt-6 flex w-full max-w-[340px] flex-col items-center gap-5 sm:mt-4 sm:block sm:h-[360px] sm:max-w-[800px]"
+          className="relative mx-auto mt-6 flex w-full max-w-[360px] flex-col items-center gap-6 sm:mt-6 sm:block sm:h-[720px] sm:max-w-[900px]"
         >
           {reviews.map((rv, i) => (
             <figure
@@ -83,7 +87,7 @@ export function ReviewStrip() {
                 ["--rot" as string]: `${rv.rot}deg`,
                 ["--mrot" as string]: `${rv.mRot}deg`,
               }}
-              className={`group w-full max-w-[300px] overflow-hidden rounded-[14px] border border-foreground/10 bg-charcoal shadow-[0_28px_60px_-24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:!rotate-[0.5deg] hover:shadow-[0_36px_70px_-22px_rgba(0,0,0,1)] ${rv.pos} ${
+              className={`group w-full max-w-[360px] overflow-hidden rounded-[14px] border border-foreground/10 bg-charcoal shadow-[0_28px_60px_-24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:!rotate-[0.5deg] hover:shadow-[0_36px_70px_-22px_rgba(0,0,0,1)] ${rv.pos} ${
                 shown
                   ? "translate-y-0 rotate-[var(--mrot)] opacity-100 sm:rotate-[var(--rot)]"
                   : "translate-y-3 rotate-0 opacity-0"
