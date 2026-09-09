@@ -76,7 +76,7 @@ export function ReviewStrip() {
 
         <div
           ref={ref}
-          className="relative mx-auto mt-6 flex w-full max-w-[340px] flex-col items-center gap-5 sm:mt-4 sm:block sm:h-[360px] sm:max-w-[800px]"
+          className="relative mx-auto mt-6 flex w-full max-w-[360px] flex-col items-center gap-6 sm:mt-6 sm:block sm:h-[720px] sm:max-w-[900px]"
         >
           {reviews.map((rv, i) => (
             <figure
@@ -87,7 +87,7 @@ export function ReviewStrip() {
                 ["--rot" as string]: `${rv.rot}deg`,
                 ["--mrot" as string]: `${rv.mRot}deg`,
               }}
-              className={`group w-full max-w-[300px] overflow-hidden rounded-[14px] border border-foreground/10 bg-charcoal shadow-[0_28px_60px_-24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:!rotate-[0.5deg] hover:shadow-[0_36px_70px_-22px_rgba(0,0,0,1)] ${rv.pos} ${
+              className={`group w-full max-w-[360px] overflow-hidden rounded-[14px] border border-foreground/10 bg-charcoal shadow-[0_28px_60px_-24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:!rotate-[0.5deg] hover:shadow-[0_36px_70px_-22px_rgba(0,0,0,1)] ${rv.pos} ${
                 shown
                   ? "translate-y-0 rotate-[var(--mrot)] opacity-100 sm:rotate-[var(--rot)]"
                   : "translate-y-3 rotate-0 opacity-0"
