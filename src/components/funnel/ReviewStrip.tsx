@@ -62,7 +62,7 @@ export function ReviewStrip() {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-10 flex max-w-[820px] flex-col items-center sm:mt-14">
+      <div className="relative mx-auto mt-10 flex max-w-[920px] flex-col items-center sm:mt-14">
         <Chip className="rotate-[-2deg] sm:absolute sm:left-0 sm:top-2 sm:z-50">★★★★★ loved it</Chip>
 
         {/* pointer arrow (desktop only) */}
