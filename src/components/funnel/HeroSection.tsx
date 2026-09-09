@@ -105,6 +105,21 @@ export function HeroSection() {
           </div>
 
         </div>
+
+        {/* Book A Call CTA */}
+        <div className={rise(stage >= 5)}>
+          <a
+            href="https://api.leadconnectorhq.com/widget/booking/XHmJCxFl4NB4MKGUNiqC"
+            target="_blank"
+            rel="noopener"
+            className="group mt-10 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-primary px-9 py-3.5 text-sm font-bold tracking-tight text-primary-foreground shadow-[0_16px_40px_-14px_color-mix(in_oklab,var(--color-primary)_70%,transparent)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            Book A Call
+            <span className="transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[5px]">
+              →
+            </span>
+          </a>
+        </div>
       </div>
 
       <PosterCards />
