@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { useInView } from "./primitives";
-import r1 from "@/assets/review-1.png.asset.json";
-import r3 from "@/assets/review-3.png.asset.json";
-import r4 from "@/assets/review-4.png.asset.json";
-import r5 from "@/assets/review-5.png.asset.json";
-import r6 from "@/assets/review-6.png.asset.json";
-import r7 from "@/assets/review-7.png.asset.json";
+import r1 from "@/assets/review-1.png";
+import r3 from "@/assets/review-3.png";
+import r4 from "@/assets/review-4.png";
+import r5 from "@/assets/review-5.png";
+import r6 from "@/assets/review-6.png";
+import r7 from "@/assets/review-7.png";
 
 type Review = {
   img: string;
@@ -17,12 +17,12 @@ type Review = {
 };
 
 const reviews: Review[] = [
-  { img: r1.url, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-0 sm:top-0 sm:w-[330px]" },
-  { img: r5.url, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-0 sm:top-0 sm:w-[330px]" },
-  { img: r3.url, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[120px] sm:w-[360px] sm:-translate-x-1/2", focal: true },
-  { img: r6.url, rot: -5, mRot: -2, z: 25, pos: "sm:absolute sm:left-[3%] sm:top-[280px] sm:w-[320px]" },
-  { img: r7.url, rot: 4, mRot: 2, z: 25, pos: "sm:absolute sm:right-[3%] sm:top-[280px] sm:w-[320px]" },
-  { img: r4.url, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-1/2 sm:top-[440px] sm:w-[330px] sm:-translate-x-1/2" },
+  { img: r1, rot: -6, mRot: -2.5, z: 10, pos: "sm:absolute sm:left-0 sm:top-0 sm:w-[330px]" },
+  { img: r5, rot: 5, mRot: 2.5, z: 20, pos: "sm:absolute sm:right-0 sm:top-0 sm:w-[330px]" },
+  { img: r3, rot: -3, mRot: -2, z: 40, pos: "sm:absolute sm:left-1/2 sm:top-[120px] sm:w-[360px] sm:-translate-x-1/2", focal: true },
+  { img: r6, rot: -5, mRot: -2, z: 25, pos: "sm:absolute sm:left-[3%] sm:top-[280px] sm:w-[320px]" },
+  { img: r7, rot: 4, mRot: 2, z: 25, pos: "sm:absolute sm:right-[3%] sm:top-[280px] sm:w-[320px]" },
+  { img: r4, rot: 4, mRot: 2, z: 30, pos: "sm:absolute sm:left-1/2 sm:top-[440px] sm:w-[330px] sm:-translate-x-1/2" },
 ];
 
 

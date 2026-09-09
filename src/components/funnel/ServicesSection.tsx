@@ -1,16 +1,16 @@
 import { ArrowIcon, Reveal, SectionHeader } from "./primitives";
-import thumbnails from "@/assets/10001.png.asset.json";
-import graphics from "@/assets/10003.png.asset.json";
-import advertising from "@/assets/10004.png.asset.json";
-import uiux from "@/assets/10006.png.asset.json";
-import video from "@/assets/10005.jpeg.asset.json";
+import thumbnails from "@/assets/10001.png";
+import graphics from "@/assets/10003.png";
+import advertising from "@/assets/10004.png";
+import uiux from "@/assets/10006.png";
+import video from "@/assets/10005.jpeg";
 
 const services = [
-  { name: "Thumbnails", img: thumbnails.url, href: "https://copyboard.cc/thumbnail" },
-  { name: "Graphics & Logos", img: graphics.url, href: "https://copyboard.cc/graphicslogos" },
-  { name: "Advertising", img: advertising.url, href: "https://copyboard.cc/advertisements" },
-  { name: "UI/UX Designs", img: uiux.url, href: "https://copyboard.cc/uiuxdesign" },
-  { name: "Videos & Motion Graphics", img: video.url, href: "https://copyboard.cc/vmg" },
+  { name: "Thumbnails", img: thumbnails, href: "https://copyboard.cc/thumbnail" },
+  { name: "Graphics & Logos", img: graphics, href: "https://copyboard.cc/graphicslogos" },
+  { name: "Advertising", img: advertising, href: "https://copyboard.cc/advertisements" },
+  { name: "UI/UX Designs", img: uiux, href: "https://copyboard.cc/uiuxdesign" },
+  { name: "Videos & Motion Graphics", img: video, href: "https://copyboard.cc/vmg" },
 ];
 
 export function ServicesSection() {

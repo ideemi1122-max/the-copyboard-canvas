@@ -1,12 +1,12 @@
 import { GemAccent, Reveal } from "./primitives";
-import b0 from "@/assets/brand_0.png.asset.json";
-import b1 from "@/assets/brand_1.png.asset.json";
-import b2 from "@/assets/brand_2.png.asset.json";
-import b3 from "@/assets/brand_3.png.asset.json";
-import b4 from "@/assets/brand_4.png.asset.json";
-import b5 from "@/assets/brand_5.png.asset.json";
+import b0 from "@/assets/brand_0.png";
+import b1 from "@/assets/brand_1.png";
+import b2 from "@/assets/brand_2.png";
+import b3 from "@/assets/brand_3.png";
+import b4 from "@/assets/brand_4.png";
+import b5 from "@/assets/brand_5.png";
 
-const brands = [b0, b1, b2, b3, b4, b5].map((b, i) => ({ url: b.url, name: `Partner brand ${i + 1}` }));
+const brands = [b0, b1, b2, b3, b4, b5].map((b, i) => ({ url: b, name: `Partner brand ${i + 1}` }));
 
 export function TrustedSection() {
   return (

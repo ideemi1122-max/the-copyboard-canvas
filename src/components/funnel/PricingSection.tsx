@@ -1,16 +1,16 @@
 import { ChatButton, CheckIcon, Reveal } from "./primitives";
-import thumbnails from "@/assets/10001.png.asset.json";
-import graphics from "@/assets/10003.png.asset.json";
-import advertising from "@/assets/10004.png.asset.json";
-import uiux from "@/assets/10006.png.asset.json";
-import video from "@/assets/10005.jpeg.asset.json";
+import thumbnails from "@/assets/10001.png";
+import graphics from "@/assets/10003.png";
+import advertising from "@/assets/10004.png";
+import uiux from "@/assets/10006.png";
+import video from "@/assets/10005.jpeg";
 
 const mockups = [
-  { img: uiux.url, rot: -12, z: 10, x: -110 },
-  { img: graphics.url, rot: -6, z: 20, x: -55 },
-  { img: thumbnails.url, rot: 0, z: 40, x: 0 },
-  { img: advertising.url, rot: 6, z: 20, x: 55 },
-  { img: video.url, rot: 12, z: 10, x: 110 },
+  { img: uiux, rot: -12, z: 10, x: -110 },
+  { img: graphics, rot: -6, z: 20, x: -55 },
+  { img: thumbnails, rot: 0, z: 40, x: 0 },
+  { img: advertising, rot: 6, z: 20, x: 55 },
+  { img: video, rot: 12, z: 10, x: 110 },
 ];
 
 const checklist = [

@@ -1,15 +1,15 @@
-import box1 from "@/assets/box1-video-editing.jpg.asset.json";
-import box2 from "@/assets/box2-podcast-editing.jpg.asset.json";
-import box3 from "@/assets/box3-shortform-hyperedit.jpg.asset.json";
-import box4 from "@/assets/box4-branding-design.jpg.asset.json";
+import box1 from "@/assets/box1-video-editing.jpg";
+import box2 from "@/assets/box2-podcast-editing.jpg";
+import box3 from "@/assets/box3-shortform-hyperedit.jpg";
+import box4 from "@/assets/box4-branding-design.jpg";
 
 type Poster = { label: string; img: string };
 
 const posters: Poster[] = [
-  { label: "Video Editing", img: box1.url },
-  { label: "Podcast Editing", img: box2.url },
-  { label: "Short-form / Hyper Edit", img: box3.url },
-  { label: "Branding / Design", img: box4.url },
+  { label: "Video Editing", img: box1 },
+  { label: "Podcast Editing", img: box2 },
+  { label: "Short-form / Hyper Edit", img: box3 },
+  { label: "Branding / Design", img: box4 },
 ];
 
 export function PosterCards() {
