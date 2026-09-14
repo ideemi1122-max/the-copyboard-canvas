@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type State = "before" | "after";
 
@@ -34,6 +34,17 @@ const YELLOW = "#FFD400";
 
 export function BeforeAfterSection() {
   const [state, setState] = useState<State>("after");
+
+  // Auto-rotate Before → After → Before … every ~1s, unless user prefers reduced motion.
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const id = window.setInterval(() => {
+      setState((prev) => (prev === "before" ? "after" : "before"));
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
   const d = data[state];
   const accent = state === "after" ? YELLOW : RED;
 
