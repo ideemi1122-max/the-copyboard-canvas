@@ -70,8 +70,8 @@ function StatCard({ stat, delay, active, index }: { stat: Stat; delay: number; a
 export function GrowthSection() {
   const ref = useRef<HTMLDivElement | null>(null);
   const active = useInView(ref);
-  const rotations = ["-9deg", "-3deg", "3deg", "9deg"];
-  const lifts = ["mt-8", "mt-0", "mt-0", "mt-8"];
+  const rotations = ["-9deg", "-3deg", "3deg"];
+  const lifts = ["mt-8", "mt-0", "mt-8"];
 
   return (
     <section className="relative bg-ink px-5 py-16 sm:py-24">
@@ -81,25 +81,23 @@ export function GrowthSection() {
         sub="Our creators ship every day, and the channels we run compound fast. Here's what our partners see."
       />
 
-      <div ref={ref} className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-        {[...stats.map((s, i) => ({ key: s.label, node: <StatCard stat={s} delay={i * 150} active={active} index={i} /> })), { key: "chart", node: <ChartCard active={active} /> }].map(
-          (item, i) => (
-            <div
-              key={item.key}
-              className={`group relative ${lifts[i]} transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:z-30 hover:-translate-y-2 hover:!rotate-0 ${
-                active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              }`}
-              style={{
-                rotate: rotations[i],
-                zIndex: i === 1 || i === 2 ? 20 : 10,
-                transitionDelay: `${i * 150}ms`,
-                marginInline: i > 0 ? "-8px" : undefined,
-              }}
-            >
-              {item.node}
-            </div>
-          ),
-        )}
+      <div ref={ref} className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+        {stats.map((s, i) => (
+          <div
+            key={s.label}
+            className={`group relative ${lifts[i]} transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:z-30 hover:-translate-y-2 hover:!rotate-0 ${
+              active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+            style={{
+              rotate: rotations[i],
+              zIndex: i === 1 ? 20 : 10,
+              transitionDelay: `${i * 150}ms`,
+              marginInline: i > 0 ? "-8px" : undefined,
+            }}
+          >
+            <StatCard stat={s} delay={i * 150} active={active} index={i} />
+          </div>
+        ))}
       </div>
     </section>
   );
