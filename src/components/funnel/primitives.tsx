@@ -46,21 +46,22 @@ export function ChatButton({
       rel="noopener"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-tight transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 ${styles[variant]} ${className}`}
     >
-      <ChatBubble />
+      <PhoneIcon />
       {label}
       <ArrowIcon />
     </a>
   );
 }
 
-function ChatBubble() {
+function PhoneIcon() {
   return (
     <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
       <path
-        d="M2.5 7.2c0-2.3 2.2-4.1 5.2-4.1s5.3 1.8 5.3 4.1-2.3 4.2-5.3 4.2c-.6 0-1.2-.1-1.7-.2l-2.6 1.3.6-2.1A3.9 3.9 0 0 1 2.5 7.2Z"
+        d="M3.4 2.5h2.1l1 2.6-1.3 1a9 9 0 0 0 3.7 3.7l1-1.3 2.6 1v2.1a1 1 0 0 1-1.1 1A11 11 0 0 1 2.4 3.6a1 1 0 0 1 1-1.1Z"
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinejoin="round"
+        strokeLinecap="round"
       />
     </svg>
   );
