@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/funnel/HeroSection";
 import { BrandDivider } from "@/components/funnel/BrandDivider";
 import { GrowthSection } from "@/components/funnel/GrowthSection";
 import { IncludedSection } from "@/components/funnel/IncludedSection";
-import { ServicesSection } from "@/components/funnel/ServicesSection";
 import { TrustedSection } from "@/components/funnel/TrustedSection";
 import { PricingSection } from "@/components/funnel/PricingSection";
 import { ProcessSection } from "@/components/funnel/ProcessSection";
@@ -52,7 +51,6 @@ function FunnelPage() {
       <GrowthSection />
       <BeforeAfterSection />
       <IncludedSection />
-      <ServicesSection />
       <ReviewStrip />
       <BrandDivider />
       <TrustedSection />
