@@ -32,7 +32,7 @@ export function PosterCards() {
             <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,color-mix(in_oklab,var(--color-ink)_80%,transparent)_100%)]" />
           </div>
 
-          <p className="relative mt-3 text-center text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-foreground">
+          <p className="relative mt-3 text-center text-[0.72rem] font-bold uppercase tracking-[0.14em] text-foreground">
             {p.label}
           </p>
         </article>

@@ -26,7 +26,7 @@ type ChatVariant = "solid" | "outline" | "black";
 export function ChatButton({
   variant = "solid",
   className = "",
-  label = "Chat With Us",
+  label = "Book A Call",
 }: {
   variant?: ChatVariant;
   className?: string;
